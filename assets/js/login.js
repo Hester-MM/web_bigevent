@@ -36,7 +36,7 @@ $(function () {
             username: $('#reg-form [name=username]').val(),
             password: $('#reg-form [name=password]').val()
         }
-        $.post('http://big-event-api-t.itheima.net', data, function (res) {
+        $.post('/api/reguser',data,function (res) {
             if (res.status !== 0) {
                 return layer.msg(res.message);
             }
@@ -45,23 +45,23 @@ $(function () {
         })
     })
     //监听用户登录事件
-    $('#login-form').on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-            url: '/api/login',
-            methods: 'POST',
-            data: $(this).serialize(),
-            success: function (res) {
-                if (res.status !== 0) {
-                    return layer.msg(res.message);
-                }
-                layer.msg('登录成功！');
-                //先获取后台权限将token字符串保存的用户信息存在localStorage中
-                localStorage.setItem('token',res.token);
-                location.href = '/index.html';
-            }
-        })
+   $('#login-form').on('submit',function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: 'api/login',
+        method: 'POST',
+        data: $(this).serialize(),
+        success: function(res) {
+          if (res.status !== 0) {
+            return layer.msg('登陆失败')
+          }
+          layer.msg('登陆成功')
+          console.log(res.token);
+          localStorage.setItem('token',res.token);
+          location.href ='/index.html'
+        }
 
     })
+   })
 
 })
