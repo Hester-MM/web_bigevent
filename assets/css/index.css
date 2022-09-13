@@ -2,3 +2,47 @@
     text-align: center;
     font-size: 12px;
 }
+.iconfont{
+    margin-right: 10px;
+}
+.layui-icon {
+ margin-left: 20px;
+ margin-right: 10px;
+}
+iframe {
+    height: 100%;
+    width: 100%;
+}
+.layui-body {
+    overflow: hidden;
+}
+
+a {
+  transition: none!important;
+}
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    user-select: none;
+}
+.layui-nav-img {
+    width: 40px;
+    height: 40px;
+}
+.text-avator {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #009688;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    top: 4px;
+
+}

@@ -48,7 +48,7 @@ $(function () {
    $('#login-form').on('submit',function(e) {
     e.preventDefault();
     $.ajax({
-        url: 'api/login',
+        url: '/api/login',
         method: 'POST',
         data: $(this).serialize(),
         success: function(res) {
@@ -58,7 +58,7 @@ $(function () {
           layer.msg('登陆成功')
           console.log(res.token);
           localStorage.setItem('token',res.token);
-          location.href ='/index.html'
+          location.href ='/大事件案例/index.html'
         }
 
     })
